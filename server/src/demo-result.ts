@@ -1,0 +1,46 @@
+export const demoScrapeResult = {
+  success: true as const,
+  accounts: [
+    {
+      accountNumber: '12-345-678901',
+      balance: 15420.5,
+      txns: [
+        {
+          type: 'normal' as const,
+          date: '2026-03-01T00:00:00.000+02:00',
+          processedDate: '2026-03-02T00:00:00.000+02:00',
+          originalAmount: -120.5,
+          originalCurrency: 'ILS',
+          chargedAmount: -120.5,
+          description: 'Supermarket purchase',
+          memo: '',
+          status: 'completed' as const,
+        },
+        {
+          type: 'normal' as const,
+          date: '2026-03-05T00:00:00.000+02:00',
+          processedDate: '2026-03-05T00:00:00.000+02:00',
+          originalAmount: 8500,
+          originalCurrency: 'ILS',
+          chargedAmount: 8500,
+          description: 'Salary',
+          memo: '',
+          status: 'completed' as const,
+        },
+        {
+          type: 'installments' as const,
+          identifier: 1001,
+          date: '2026-03-10T00:00:00.000+02:00',
+          processedDate: '2026-03-10T00:00:00.000+02:00',
+          originalAmount: -200,
+          originalCurrency: 'ILS',
+          chargedAmount: -200,
+          description: 'Electronics — installment',
+          memo: '',
+          installments: { number: 3, total: 12 },
+          status: 'completed' as const,
+        },
+      ],
+    },
+  ],
+};
