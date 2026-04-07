@@ -1,0 +1,17 @@
+// vite.config.ts
+import { defineConfig } from "file:///E:/Bank_scraping/israeli-bank-scrapers-master/Web/node_modules/vite/dist/node/index.js";
+import react from "file:///E:/Bank_scraping/israeli-bank-scrapers-master/Web/node_modules/@vitejs/plugin-react/dist/index.js";
+var apiTarget = process.env.VITE_DEV_API ?? "http://127.0.0.1:8787";
+var vite_config_default = defineConfig({
+  plugins: [react()],
+  server: {
+    proxy: {
+      "/api": { target: apiTarget, changeOrigin: true },
+      "/health": { target: apiTarget, changeOrigin: true }
+    }
+  }
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCJFOlxcXFxCYW5rX3NjcmFwaW5nXFxcXGlzcmFlbGktYmFuay1zY3JhcGVycy1tYXN0ZXJcXFxcV2ViXFxcXGNsaWVudFwiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9maWxlbmFtZSA9IFwiRTpcXFxcQmFua19zY3JhcGluZ1xcXFxpc3JhZWxpLWJhbmstc2NyYXBlcnMtbWFzdGVyXFxcXFdlYlxcXFxjbGllbnRcXFxcdml0ZS5jb25maWcudHNcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfaW1wb3J0X21ldGFfdXJsID0gXCJmaWxlOi8vL0U6L0Jhbmtfc2NyYXBpbmcvaXNyYWVsaS1iYW5rLXNjcmFwZXJzLW1hc3Rlci9XZWIvY2xpZW50L3ZpdGUuY29uZmlnLnRzXCI7aW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSAndml0ZSc7XG5pbXBvcnQgcmVhY3QgZnJvbSAnQHZpdGVqcy9wbHVnaW4tcmVhY3QnO1xuXG5jb25zdCBhcGlUYXJnZXQgPSBwcm9jZXNzLmVudi5WSVRFX0RFVl9BUEkgPz8gJ2h0dHA6Ly8xMjcuMC4wLjE6ODc4Nyc7XG5cbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XG4gIHBsdWdpbnM6IFtyZWFjdCgpXSxcbiAgc2VydmVyOiB7XG4gICAgcHJveHk6IHtcbiAgICAgICcvYXBpJzogeyB0YXJnZXQ6IGFwaVRhcmdldCwgY2hhbmdlT3JpZ2luOiB0cnVlIH0sXG4gICAgICAnL2hlYWx0aCc6IHsgdGFyZ2V0OiBhcGlUYXJnZXQsIGNoYW5nZU9yaWdpbjogdHJ1ZSB9LFxuICAgIH0sXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7QUFBb1csU0FBUyxvQkFBb0I7QUFDalksT0FBTyxXQUFXO0FBRWxCLElBQU0sWUFBWSxRQUFRLElBQUksZ0JBQWdCO0FBRTlDLElBQU8sc0JBQVEsYUFBYTtBQUFBLEVBQzFCLFNBQVMsQ0FBQyxNQUFNLENBQUM7QUFBQSxFQUNqQixRQUFRO0FBQUEsSUFDTixPQUFPO0FBQUEsTUFDTCxRQUFRLEVBQUUsUUFBUSxXQUFXLGNBQWMsS0FBSztBQUFBLE1BQ2hELFdBQVcsRUFBRSxRQUFRLFdBQVcsY0FBYyxLQUFLO0FBQUEsSUFDckQ7QUFBQSxFQUNGO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K

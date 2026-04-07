@@ -33,6 +33,8 @@ npm run dev
 - **API:** [http://127.0.0.1:8787](http://127.0.0.1:8787) — `GET /health`, `GET /api/demo`, `POST /api/scrape`
 - **UI:** [http://127.0.0.1:5173](http://127.0.0.1:5173) — Vite proxies `/api` and `/health` to the API
 
+**Client routes:** `/login` (sign-in & sync), `/dashboard` (overview + searchable activity), `/accounts`, `/settings` (theme, CSV export, clear session). **Light/dark** theme is toggled in the shell and on the login screen; preference is stored in `localStorage`.
+
 Or run them separately:
 
 ```bash
