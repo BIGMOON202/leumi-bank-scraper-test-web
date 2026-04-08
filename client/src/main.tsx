@@ -5,6 +5,7 @@ import App from './App';
 import { ThemeProvider } from './context/ThemeContext';
 import { ScrapeProvider } from './context/ScrapeContext';
 import './styles.css';
+import './banking.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

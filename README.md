@@ -33,7 +33,9 @@ npm run dev
 - **API:** [http://127.0.0.1:8787](http://127.0.0.1:8787) — `GET /health`, `GET /api/demo`, `POST /api/scrape`
 - **UI:** [http://127.0.0.1:5173](http://127.0.0.1:5173) — Vite proxies `/api` and `/health` to the API
 
-**Client routes:** `/login` (sign-in & sync), `/dashboard` (overview + searchable activity), `/accounts`, `/settings` (theme, CSV export, clear session). **Light/dark** theme is toggled in the shell and on the login screen; preference is stored in `localStorage`.
+**Client routes:** `/login` (sign-in & sync), `/dashboard` (**finance report** layout with [Recharts](https://recharts.org/) — cumulative flow + inflow/outflow bars, KPI strip, export), `/accounts`, `/settings` (theme, CSV export, clear session). **Light/dark** theme is toggled in the shell and on the login screen; preference is stored in `localStorage`.
+
+Dashboard UI is aligned with the client-selected reference: [Finance Report Dashboard · SaaS Web App](https://dribbble.com/shots/26645893-Finance-Report-Dashboard-Saas-Web-App) (report chrome, analytics chart, comparison widget — original implementation, not a pixel copy).
 
 Or run them separately:
 

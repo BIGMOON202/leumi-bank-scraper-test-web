@@ -18,15 +18,14 @@ export function SettingsPage() {
   }
 
   return (
-    <>
-      <header className="page-header">
-        <div className="page-header-text">
+    <div className="bank-page-inner">
+      <header className="bank-dash-hero">
+        <div className="bank-dash-greet">
           <h1>Settings</h1>
           <p>Appearance, exports, and session.</p>
         </div>
       </header>
-      <main className="content">
-        <div className="settings-stack">
+      <div className="settings-stack">
           <section className="panel-glass settings-card">
             <h2>Appearance</h2>
             <p className="settings-desc">Choose light or dark. Preference is saved in this browser.</p>
@@ -97,7 +96,6 @@ export function SettingsPage() {
             </ul>
           </section>
         </div>
-      </main>
-    </>
+    </div>
   );
 }

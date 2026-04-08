@@ -51,3 +51,11 @@ export function formatSyncTime(d: Date): string {
     minute: '2-digit',
   }).format(d);
 }
+
+/** e.g. 1 Mar 2026 – 10 Mar 2026 */
+export function formatReportPeriod(isoStart: string, isoEnd: string): string {
+  const s = new Date(`${isoStart}T12:00:00`);
+  const e = new Date(`${isoEnd}T12:00:00`);
+  const f = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  return `${f.format(s)} – ${f.format(e)}`;
+}

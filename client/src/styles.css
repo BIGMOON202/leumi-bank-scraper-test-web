@@ -1090,6 +1090,537 @@ td.pos {
   line-height: 1.65;
 }
 
+/* —— Dribbble-style report / bento dashboard —— */
+.page-header-report .report-eyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.hero-balance {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(91, 140, 255, 0.14) 0%, rgba(167, 139, 250, 0.1) 50%, transparent 100%);
+  border: 1px solid rgba(91, 140, 255, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-balance::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.06), transparent 45%);
+  pointer-events: none;
+}
+
+.hero-balance-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.hero-balance-value {
+  margin: 0.35rem 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  position: relative;
+}
+
+.hero-balance-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.bento-kpi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .bento-kpi {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .bento-kpi {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kpi-tile {
+  min-height: 120px;
+}
+
+.kpi-value-sm {
+  font-size: 1.15rem;
+}
+
+.bento-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .bento-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-chart,
+.bento-side {
+  margin: 0;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-head-inline {
+  margin-bottom: 1rem;
+}
+
+.panel-head-inline h2 {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.panel-head-inline p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.chart-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 140px;
+}
+
+.chart-svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+.chart-labels {
+  position: relative;
+  height: 1.25rem;
+  margin-top: 0.35rem;
+}
+
+.chart-label {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.chart-empty {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.activity-item:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border);
+}
+
+.activity-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.activity-avatar.grad-a {
+  background: linear-gradient(135deg, #5b8cff, #7c5cff);
+}
+.activity-avatar.grad-b {
+  background: linear-gradient(135deg, #3eecc6, #2eb8a8);
+}
+.activity-avatar.grad-c {
+  background: linear-gradient(135deg, #a78bfa, #ec4899);
+}
+.activity-avatar.grad-d {
+  background: linear-gradient(135deg, #f97316, #f43f5e);
+}
+.activity-avatar.grad-e {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+}
+
+.activity-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-meta {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.activity-amount {
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.activity-amount.neg {
+  color: var(--coral);
+}
+
+.activity-amount.pos {
+  color: var(--mint);
+}
+
+.activity-empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.section-head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-title.flat {
+  margin: 0;
+}
+
+.section-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.table-card-elevated {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='light'] .table-card-elevated {
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* —— Finance Report SaaS (Dribbble 26645893–style) —— */
+.saas-report-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 0.75rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(91, 140, 255, 0.06) 0%, transparent 100%);
+}
+
+.saas-eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+.saas-report-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.saas-report-period {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.saas-report-note {
+  margin: 0.65rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 52ch;
+  line-height: 1.5;
+}
+
+.saas-report-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.saas-report-note a:hover {
+  text-decoration: underline;
+}
+
+.saas-report-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-export {
+  background: var(--text);
+  color: var(--bg-deep);
+  border: 1px solid var(--border-strong);
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+}
+
+.btn-export:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+html[data-theme='light'] .btn-export {
+  background: #0f172a;
+  color: #fff;
+}
+
+.saas-balance-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-soft);
+}
+
+.saas-balance-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.saas-balance-value {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 0.2rem;
+}
+
+.saas-balance-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.saas-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .saas-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .saas-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.saas-stat-card {
+  position: relative;
+  padding: 1.15rem 1.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  overflow: hidden;
+  min-height: 108px;
+}
+
+.saas-stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.saas-stat-inflow {
+  border-color: rgba(62, 236, 198, 0.2);
+}
+
+.saas-stat-outflow {
+  border-color: rgba(255, 123, 123, 0.2);
+}
+
+.saas-stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.saas-stat-value {
+  margin-top: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.saas-stat-value.saas-stat-money {
+  font-size: 1.05rem;
+}
+
+.saas-stat-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.35;
+  color: var(--accent);
+}
+
+.finance-report-charts {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .finance-report-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.report-chart-primary,
+.report-chart-secondary {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-chart-head {
+  margin-bottom: 0.75rem;
+}
+
+.report-chart-title {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.report-chart-sub {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.report-rechart {
+  flex: 1;
+  min-height: 300px;
+}
+
+.report-rechart-bar {
+  min-height: 220px;
+}
+
+.saas-recent-panel {
+  margin-bottom: 1.25rem;
+}
+
+.saas-search {
+  margin-bottom: 1.25rem;
+}
+
+.saas-table-wrap {
+  border-radius: var(--radius-lg);
+}
+
+.content-report {
+  padding-top: 1rem;
+}
+
 /* —— Light theme —— */
 html[data-theme='light'] {
   --bg-deep: #e8ecf4;
